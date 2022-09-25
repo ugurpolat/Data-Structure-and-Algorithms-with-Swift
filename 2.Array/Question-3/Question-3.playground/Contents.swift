@@ -34,7 +34,7 @@ public func solution(A: [String], B: [String], P: String) -> String {
     
     // sort and return first
     return result.sorted().first!
-    
+
 }
 
 

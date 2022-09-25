@@ -133,3 +133,230 @@ if str.isEmpty {
     print("No, there is a character")
 }
 */
+
+//
+
+/*
+let word = "Ugur Polat"
+
+print("Character Count: \(word.count)");
+*/
+
+/*
+// checking name start with 'S'
+
+let nameArray = ["Sam","Samatha","George","Phil"]
+for name in nameArray where name.hasPrefix("S"){
+    print(name);
+}
+
+// checking last word
+
+let fileName = "Example_1.swift";
+
+if fileName.hasSuffix(".swift") {
+    print("This is a swift file.")
+} else {
+    print("This is not swift file.")
+}
+
+// Getting a new string from a string
+
+let str = "Merhaba Swift Taylor"
+
+let start = str.index(str.startIndex,offsetBy: 14)
+let finish = str.index(str.startIndex,offsetBy: 20);
+
+let name = str[start..<finish]
+print(name)
+
+ 
+
+let str = "Hello Swift!"
+
+let first = str[str.startIndex]  // H
+let last = str[str.index(before: str.endIndex)]; // !
+let second = str[str.index(after: str.startIndex)]; // e
+let i =  str.index(str.startIndex, offsetBy: 8);
+let search = str[i]
+let takeWord = str[..<i]
+
+print(first,last,second);
+print(search,takeWord);
+
+ */
+
+/*
+let stars = "*,**,***,****"
+let c = stars.split(separator: ",")
+
+for x in c {
+    print(x,"\t")
+}
+
+var t = "Swift"
+print("Original: \(t)")
+
+if let cut = t.range(of: "w") {
+    t.replaceSubrange(cut, with: "v")
+}
+
+t.insert("!", at: t.endIndex )
+
+*/
+
+/*
+// Delete
+
+var str = "Swift"
+print(str)
+for _ in str {
+    str.remove(at: str.index(before: str.endIndex))
+    print(str)
+}
+
+
+var str2 = "Swift"
+let range = str.index(str.endIndex, offsetBy: -str.count)..<str.endIndex
+str.removeSubrange(range)
+print(Array(str))
+
+*/
+
+
+/*
+var sArray = ["Sema","Salih","Eren","Gamze","Selim"]
+
+let delete_1 = sArray.removeLast() // Selim
+print(sArray)
+
+let delete_2 = sArray.removeFirst() // Sema
+print(sArray)
+
+*/
+
+
+/*
+let string = "This is a sample word."
+let vowels = "aeiou"
+let consonants = "b,c,d,f,g,j,k,l,m,n,p,q,s,t,v,x,z,h,r,w,y"
+var vowelsCount = 0
+var consonantsCount = 0
+
+for c in string.lowercased() {
+    if vowels.contains(c) {
+        vowelsCount += 1;
+    }
+    else if consonants.contains(c) {
+        consonantsCount += 1
+    }
+}
+
+print(string.count);
+print(vowelsCount);
+print(consonantsCount);
+
+// string reversed
+
+let name = "ugur";
+
+for i in name.reversed() {
+    print(i, terminator: "")
+}
+
+ */
+
+
+// Check palindrome
+
+func palindrome (str: String) -> Bool {
+    let kStr = str.lowercased();
+    return kStr.reversed() == Array(kStr)
+}
+
+
+let name = "Kayak"
+if palindrome(str: name) == true {
+    print("True")
+} else {
+    print(false)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

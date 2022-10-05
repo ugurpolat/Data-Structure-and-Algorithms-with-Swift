@@ -15,9 +15,19 @@ class Node {
 }
 
 func length(_ head: Node?) -> Int{
+    var len = 0
+    if head == nil {
+        return len
+    }
     
+    var current = head
     
-    return 0
+    while(current != nil){
+        current = current?.next
+        len += 1
+    }
+    
+    return len
 }
 
 
@@ -28,3 +38,6 @@ let node4 = Node(4, node5)
 let node3 = Node(3, node4)
 let node2 = Node(2, node3)
 let node1 = Node(1, node2)
+
+length(nil)
+length(node1)

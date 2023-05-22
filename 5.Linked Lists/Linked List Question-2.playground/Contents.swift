@@ -54,16 +54,16 @@ func printLinkedList(_ head: Node?) {
 }
 
 
-// O(n^2)
+// O(n * m)
 func findMergeBrute(headA: Node?, headB: Node?) -> Int? {
     let m = length(headA) // O(m)
     let n = length(headB) // O(n)
     
     var currentA = headA
     
-    for _ in 0...m-1 {
+    for _ in 0...m-1 {  //O(m)
         var currentB = headB
-        for _ in 0...n-1{
+        for _ in 0...n-1{ //O(n)
             let A = currentA?.data
             let B = currentB?.data
             print("A: \(A ?? 0) B: \(B ?? 0)")
@@ -78,7 +78,7 @@ func findMergeBrute(headA: Node?, headB: Node?) -> Int? {
     return nil
 }
 
-
+// O(n + m)
 func findMergeSpaceTime(headA: Node?, headB: Node?) -> Int? {
     
     // Create a Dict of all nodes of B
@@ -88,14 +88,14 @@ func findMergeSpaceTime(headA: Node?, headB: Node?) -> Int? {
     
     var dict = [Int?: Bool]()
     var currentB = headB
-    for _ in 0...n-1 {
+    for _ in 0...n-1 { // O(n)
         let B = currentB?.data
         dict[B] = true
         currentB = currentB?.next
     }
     
     var currentA = headA
-    for _ in 0...m-1 {
+    for _ in 0...m-1 { // O(m)
         let A = currentA?.data
         if dict[A] == true {
             return A
@@ -105,7 +105,7 @@ func findMergeSpaceTime(headA: Node?, headB: Node?) -> Int? {
 
     return nil
 }
-
+// O(n+m)
 func findMergeInsight(headA: Node?, headB: Node?) -> Int?{
     // Figure out which is longer
     // Swap if necessary
@@ -126,12 +126,12 @@ func findMergeInsight(headA: Node?, headB: Node?) -> Int?{
     }
     let d = abs(m - n)
     
-    for _ in 1...d {
+    for _ in 1...d { //O(n)
         currentA = currentA?.next
     }
     
     
-    for _ in 0...n-1 {
+    for _ in 0...n-1 { // O(n)
         let A = currentA?.data
         let B = currentB?.data
         if A == B {

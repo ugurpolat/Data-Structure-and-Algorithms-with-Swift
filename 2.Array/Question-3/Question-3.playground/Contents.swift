@@ -19,7 +19,6 @@ public func solution(A: [String], B: [String], P: String) -> String {
     
     var result = [String]()
     
-    // loop through looking for match - when found add to result
     for i in 0..<B.count {
         if B[i].contains(P) {
             result.append(A[i])
@@ -28,13 +27,11 @@ public func solution(A: [String], B: [String], P: String) -> String {
     
     if result.count == 0 {
         return "NO CONTACT"
-    } else if  result.count == 1 {
+    } else if result.count == 1 {
         return result.first!
     }
     
-    // sort and return first
     return result.sorted().first!
-
 }
 
 

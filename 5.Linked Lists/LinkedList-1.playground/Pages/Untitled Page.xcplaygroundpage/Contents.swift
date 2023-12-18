@@ -1,6 +1,5 @@
 import UIKit
 
-// A linked listis simply a node with a pointer to next
 class Node {
     var data: Int
     var next: Node?
@@ -11,16 +10,11 @@ class Node {
     }
 }
 
-let node3 = Node(3);
-let node2 = Node(2,node3)
-let node1 = Node(1,node2)
+let node3 = Node(3)
+let node2 = Node(2, node3)
+let node1 = Node(1, node2)
 
-
-
-
-
-// We can print them out by walking the list
-func printLinkedListSimple(_ head: Node?){
+func printLinkedListSimple(_ head: Node?) {
     if head == nil { return }
     
     var node = head
@@ -30,11 +24,9 @@ func printLinkedListSimple(_ head: Node?){
         print(node!.next!.data)
         node = node?.next
     }
-}
-
-printLinkedListSimple(node1)
-
-// LinkedList Skeleton
-class LinkList {
     
 }
+
+
+
+

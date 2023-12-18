@@ -23,9 +23,9 @@ import UIKit
  
  */
 func solution(_ S : String) -> String  {
-    
+        
     // removing spaces and dashes
-    let noSpace = S.replacingOccurrences(of: " ", with: "");
+    let noSpace = S.replacingOccurrences(of: " ", with: "")
     let noSpaceNoDash = noSpace.replacingOccurrences(of: "-", with: "")
     
     // looping through char-by-char append dashes
@@ -33,7 +33,6 @@ func solution(_ S : String) -> String  {
     
     var count = -2
     for c in noSpaceNoDash {
-        
         result.append(c)
         if count % 3 == 0 {
             result.append("-")
@@ -43,7 +42,7 @@ func solution(_ S : String) -> String  {
     
     // strip off lingering dash
     if result.last == "-" {
-        result = String(result.dropLast());
+        result = String(result.dropLast())
     }
     
     // if second last char has a dash (-x)
@@ -54,22 +53,18 @@ func solution(_ S : String) -> String  {
         // *-x > -*x
         chars[secondLastPtr] = chars[secondLastPtr - 1]
         chars[secondLastPtr - 1] = "-"
-        
-        let result = String(chars)
-        
-        return result
     }
     
-    return result
+    return String(chars)
 }
 
 
 
-solution("123456789")           // 123-456-789
-solution("555372654")           // 555-372-654
-solution("0 - 22 1985--324")    // 022-198-53-24
+let a = solution("123456789")           // 123-456-789
+let b = solution("555372654")           // 555-372-654
+let c = solution("0 - 22 1985--324")    // 022-198-53-24
 
-// Edge cases
+//Edge cases
 solution("01")                          // 01
 solution("012")                         // 012
 solution("0123")                        // 01-23

@@ -17,22 +17,23 @@ import Foundation
 
 func max(_ array : [Int]) -> Int {
   
-  var globalOutput = 0
-  var localOutput = 0
+  var globalOutput = 0 // 1
+  var localOutput = 0 // 1
   
-  for item in array {
+  for item in array { // n
     if item != 0 {
-      localOutput += 1
-      globalOutput = max(localOutput, globalOutput)
+      localOutput += 1 //n
+      globalOutput = max(localOutput, globalOutput) // n
     } else {
-      localOutput = 0
+      localOutput = 0 // n
     }
   }
   
-  return globalOutput
+  return globalOutput // 1
   
 }
 
+// Run time = 1 + 1 + n + n + n + 1 = 3 + 3n  -> O(n)
 
 
 let test_1 = [1,1,0,1,1,1]
